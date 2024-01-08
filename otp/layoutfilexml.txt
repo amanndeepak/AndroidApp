@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:weightSum="6"
+tools:context=".MainActivity">
+
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="4.2"
+    android:background="#E4EAE4"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <!--<TextView-->
+    <!--android:id="@+id/title_text"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:padding="20dp"-->
+    <!--android:text="PSTU"-->
+    <!--android:theme="@style/ThemeOverlay.MyTitleText" />-->
+
+    <TextView
+        android:id="@+id/status"
+        style="@style/ThemeOverlay.MyTextDetail"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="14dp"
+        android:text="You are not Logged In  !!"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#3ce5ff" />
+
+    <TextView
+        android:id="@+id/detail"
+        style="@style/ThemeOverlay.MyTextDetail"
+        android:layout_above="@+id/status"
+        android:layout_centerHorizontal="true"
+        android:textColor="#00ff26"
+        android:textStyle="bold"
+        tools:text="Verifcation successful !!!!" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/detail"
+        android:layout_centerHorizontal="true"
+        android:padding="5dp"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="130dp"
+        android:layout_height="169dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        app:srcCompat="@mipmap/zatoss" />
+
+
+</RelativeLayout>
+
+
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1.8"
+    android:background="#ffffff"
+    android:gravity="center_vertical">
+
+    <LinearLayout
+        android:id="@+id/phone_auth_fields"
+        android:layout_width="fill_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:background="#a91b2a"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="horizontal"
+            android:weightSum="2.0">
+
+            <EditText
+                android:id="@+id/field_phone_number"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1.0"
+                android:background="@drawable/editfield"
+                android:hint="@string/hint_phone_number"
+                android:inputType="phone"
+                android:paddingLeft="3dp"
+                android:textColor="#000000"
+                android:textColorHint="#a3a3a3"
+                android:theme="@style/ThemeOverlay.MyLightEditText" />
+
+            <EditText
+                android:id="@+id/field_verification_code"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1.0"
+                android:background="@drawable/editfield"
+                android:hint="@string/hint_verification_code"
+                android:inputType="number"
+                android:paddingLeft="50dp"
+                android:textColor="#000000"
+                android:textColorHint="#a3a3a3"
+                android:theme="@style/ThemeOverlay.MyLightEditText" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+
+            android:orientation="horizontal"
+            android:weightSum="3.0">
+
+            <Button
+                android:id="@+id/button_start_verification"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_weight="1.0"
+                android:text="@string/start_phone_auth"
+                android:theme="@style/ThemeOverlay.MyDarkButton" />
+
+            <Button
+                android:id="@+id/button_verify_phone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="@string/verify_phone_auth"
+                android:theme="@style/ThemeOverlay.MyDarkButton" />
+
+            <Button
+                android:id="@+id/button_resend"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:text="@string/resend_phone_auth"
+                android:theme="@style/ThemeOverlay.MyDarkButton" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button_skip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#a91b2a"
+
+            android:layout_marginBottom="0dp"
+            android:textColor="#ffffff"
+            android:text=" Skip Now >>" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/signed_in_buttons"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:visibility="gone"
+        android:weightSum="1.0">
+
+        <Button
+            android:id="@+id/sign_out_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:text="Sign Out"
+            android:theme="@style/ThemeOverlay.MyDarkButton" />
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+
+
+</LinearLayout>
+

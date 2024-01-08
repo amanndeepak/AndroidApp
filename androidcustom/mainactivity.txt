@@ -1,0 +1,27 @@
+mainactivity
+--------------
+package amabze.anil.listviewcustomadapter;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        ListView mylistview= findViewById(R.id.mycustomlistview);
+
+        ArrayList<androidadapter> items= new ArrayList<>();
+        items.add(new androidadapter("a",R.drawable.a));
+        items.add(new androidadapter("b",R.drawable.b));
+
+        mylistview.setAdapter(new Myadapter(MainActivity.this , R.layout.mylistitem,items));
+    }
+}

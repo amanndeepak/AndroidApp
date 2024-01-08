@@ -1,0 +1,34 @@
+Adapters are used to bind the data to view grouos that extends the adapter view class (List view or gallery)
+
+
+adapters are of two kinds 
+
+1. Default adapter.
+2. Custom adapter.
+
+
+
+1. Default adapters 
+
+1. create a project 
+2. add list view on main activity .xml -> give id to it
+3. make one array you want to pass 
+4. connect your array with adapter 
+
+
+
+2. Custom List View
+
+1. create a project 
+2. add list vie in default layout .xml file 
+3. add one xml file to create format of list view .
+4. create a constructor (androidadapter)
+5.create myadapter
+     * extend arrayAdapters
+     * create construtor to pass the items in list.
+     * create a view holder -  contain the element for list                 item layout 
+    * we have to override 2 methods 
+       getView and getcount  
+
+6. set image resource to the specific positions
+
